@@ -1,0 +1,357 @@
+<html>
+<head>
+
+<link rel=stylesheet type="text/css" href="task.css">
+<title>Details</title>
+
+
+<script>
+    
+    function validate()
+    {
+        var e = document.getElementById("daymenu");
+        var day = e.options[e.selectedIndex].value;
+             
+             
+             
+             
+             
+             if(day == "mon")
+                 {
+                     if (localStorage.monday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                     
+                 }
+             
+             if(day == "tue")
+                 {
+                     if (localStorage.tuesday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+             
+             if(day == "wed")
+                 {
+                     if (localStorage.wednesday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+             
+             if(day == "thu")
+                 {
+                     if (localStorage.thursday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+             
+             if(day == "fri")
+                 {
+                     if (localStorage.friday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+             
+             if(day == "sat")
+                 {
+                     if (localStorage.saturday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+             
+             if(day == "sun")
+                 {
+                     if (localStorage.sunday<5)
+                         {
+                             alert("Total working hours cannot be less than 5 hours");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/detail.html";
+                             
+                         }
+                     else
+                         {
+                             sessionStorage.removeItem("username");
+                             window.location = "file:///C:/Users/sufiya.naikwadi/Desktop/My%20Work/Practice/weekchart.html";
+                         }
+                 }
+          
+    }
+    
+    function resetter()
+    {
+        
+        localStorage.removeItem("monday");
+        localStorage.removeItem("tuesday");
+        localStorage.removeItem("wednesday");
+        localStorage.removeItem("thursday");
+        localStorage.removeItem("friday");
+        localStorage.removeItem("saturday");
+        localStorage.removeItem("sunday");
+        alert("All data has been reset");
+   
+    }
+    
+  function processForm()
+  {
+	   
+    press = document.getElementById('welcome').innerHTML = "Welcome "+sessionStorage.getItem("username");;
+	
+  }
+  
+
+function add()
+		 {
+             
+             var dif;
+		
+             var starttime = document.getElementById("strttime").value;
+             var endtime = document.getElementById("stptime").value;
+             dif = ( new Date("1970-1-1 " + endtime) - new Date("1970-1-1 " + starttime) ) / 1000 / 60 / 60;
+             
+             
+             var e = document.getElementById("daymenu");
+             var day = e.options[e.selectedIndex].value;
+             
+             
+             
+             
+             
+             if(day == "mon")
+                 {
+                     if (localStorage.monday)
+                     {
+                         localStorage.monday = Number(localStorage.monday)+dif;
+                     } 
+                    
+                     document.getElementById("myspan").innerHTML = localStorage.monday+" hour(s)";
+                 }
+             
+             if(day == "tue")
+                 {
+                     if (localStorage.tuesday)
+                     {
+                         localStorage.tuesday = Number(localStorage.tuesday)+dif;
+                     } 
+                     
+                     document.getElementById("myspan").innerHTML = localStorage.tuesday+" hour(s)";
+                 }
+             
+             if(day == "wed")
+                 {
+                     if (localStorage.wednesday)
+                     {
+                         localStorage.wednesday = Number(localStorage.wednesday)+dif;
+                     } 
+                     
+                     document.getElementById("myspan").innerHTML = localStorage.wednesday+" hour(s)";
+                 }
+             
+             if(day == "thu")
+                 {
+                     if (localStorage.thursday)
+                     {
+                         localStorage.thursday = Number(localStorage.thursday)+dif;
+                     } 
+                    
+                     document.getElementById("myspan").innerHTML = localStorage.thursday+" hour(s)";
+                 }
+             
+             if(day == "fri")
+                 {
+                     if (localStorage.friday)
+                     {
+                         localStorage.friday = Number(localStorage.friday)+dif;
+                     } 
+                     
+                     document.getElementById("myspan").innerHTML = localStorage.friday+" hour(s)";
+                 }
+             
+             if(day == "sat")
+                 {
+                     if (localStorage.saturday)
+                     {
+                         localStorage.saturday = Number(localStorage.saturday)+dif;
+                     } 
+                    
+                     document.getElementById("myspan").innerHTML = localStorage.saturday+" hour(s)";
+                 }
+             
+             if(day == "sun")
+                 {
+                     if (localStorage.sunday)
+                     {
+                         localStorage.sunday = Number(localStorage.sunday)+dif;
+                     } 
+                     
+                     document.getElementById("myspan").innerHTML = localStorage.sunday+" hour(s)";
+                 }
+
+                
+             
+             
+            
+           
+		
+		}
+		
+		
+	</script>
+</head>
+
+<body  background="time.jpg" onload="processForm()">
+    
+    
+
+<h2 style="color:white" id="welcome"  align="center"></h2>
+    <div align="center">
+        <form action="weekchart.html" method="GETo seed" autocomplete="off">
+            <table  style="color:white"  border="1px solid white" width="500px" >
+			
+			<tr>
+            <td>Total Time</td>  <td id="tot">9 hours</td></tr>
+            <tr>
+                <td>Time elapsed</td><td><label  id="minutes">00</label>:<label  id="seconds">00</label></td>
+            </tr>
+			<tr><td>Select Day </td>
+				<td>
+					<select id="daymenu" style="width: 150px">
+					<option value="mon">Monday</option>
+					<option value="tue">Tuesday</option>
+					<option value="wed">Wednesday</option>
+					<option value="thu">Thursday</option>
+					<option value="fri">Friday</option>
+					<option value="sat">Saturday</option>
+					<option value="sun">Sunday</option>
+					</select>
+					</td>
+		</tr>
+		
+		<tr>
+		<td>Specifie Work</td><td><input type="text" rows="4" cols="50" required></td>
+		</tr>
+		
+		<tr><td>Specify Start Time</td><td><input type="time" id="strttime" required></td>
+		</tr>
+		
+		<tr><td>SpecifyEnd Time</td><td><input type="time" id="stptime" required></td>
+		</tr>
+		
+                <tr><td><input type="hidden" id="time" name="time"></td></tr>
+                <tr><td><button type="button" onclick="add()">Add Time</button></td>
+                    <td><button type="button" onclick="validate()" >Logout</button></td>
+                </tr>
+				
+                <tr><td colspan="2"><span id="myspan">Time here</span></td></tr>
+                <tr><td colspan="2"><button type="button" onclick="resetter()">Reset</button></td></tr>
+            </table></form>
+    </div>
+	
+    
+    
+    <script>
+        if (!(localStorage.monday))
+            localStorage.monday = 0;
+        
+        if (!(localStorage.tuesday))
+            localStorage.tuesday = 0;
+        
+        if (!(localStorage.wednesday))
+            localStorage.wednesday = 0;
+        
+        if (!(localStorage.thursday))
+            localStorage.thursday = 0;
+        
+        if (!(localStorage.friday))
+            localStorage.friday = 0;
+        
+        if (!(localStorage.saturday))
+            localStorage.saturday = 0;
+        
+        if (!(localStorage.sunday))
+            localStorage.sunday = 0;
+        
+    </script>
+
+	
+	
+	
+    <script type="text/javascript">
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+            document.getElementById("time").value = totalSeconds;
+
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+	
+	
+</body>
+    
+</html

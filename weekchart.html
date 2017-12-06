@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="task.css">
+
+
+<script>
+    
+window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "dark2" ,//"light1", "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Weekly Timesheet"
+	},
+	
+	
+	
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Weekly Schedule Report",
+		dataPoints: [      
+			{ y: Number(localStorage.monday), label: "Monday" },
+			{ y: Number(localStorage.tuesday),  label: "Tuesday" },
+			{ y: Number(localStorage.wednesday),  label: "Wednesday" },
+			{ y: Number(localStorage.thursday),  label: "Thursday" },
+			{ y: Number(localStorage.friday),  label: "Friday" },
+			{ y: Number(localStorage.saturday), label: "Saturday" },
+			{ y: Number(localStorage.sunday),  label: "Sunday" }
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;">
+</div>
+<script src="min.js"></script>
+
+<form action="login.html" method="GET">
+    <table>
+        <tr>
+            <td><input type="submit" name="submit" id="submit" value="Home" ></td>
+        </tr>
+    </table>
+</form>
+    
+</body>
+
+</html>

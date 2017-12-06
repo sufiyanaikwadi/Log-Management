@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="task.css">
+
+<script>
+       
+window.onload = function() {
+    
+    var parameters = location.search.substring(1).split("&");
+    var temp = parameters[0].split("=");
+    l = unescape(temp[1])/60;
+    
+    
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	
+	animationEnabled: true,
+	theme: "dark1" ,
+	title: {
+		text: "Time Detail"
+			},
+	data: [{
+		type: "pie",
+		startAngle: 0,
+		yValueFormatString: "##0.00\" minutes\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: l, label: "Time Elapsed"},
+			{y: 10-l, label: "Time Remaining"},
+		
+			
+		]
+	}]
+	
+	
+});
+chart.render();
+
+
+}
+
+</script></head>
+<div class="bg">
+    <body>
+		
+		
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        </body>
+		<form action="login.html" method="GET">
+		<table>
+		
+        <tr>
+           <td><input type="submit" name="submit" id="submit" value="Home" ></td>
+        </tr>
+	
+	</table>
+		</form>
+		</div>
+    <script src="min.js"></script>
+</html>

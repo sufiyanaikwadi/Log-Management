@@ -1,0 +1,76 @@
+body {
+	background-image : url("time.jpg");
+	color : white;
+	font-family: Verdana,sans-serif;
+	
+	}
+
+p {
+				text-align: center;
+				font-size: 60px;
+				color : white;
+				
+			}
+			
+			b {
+				font-family : Arial, Impact;
+				color : black;
+				font-size : 30pt;
+				text-align : center
+			}
+			
+			
+			div {
+				
+				text-align : center;
+				font-size : 40px;
+				color : white;
+			}
+			
+			
+			table { 
+				display: table;
+				border-collapse: separate;
+				border-spacing: 10px;
+				border-color: gray;
+				font-family: Verdana,sans-serif;
+				margin: 0px auto; 
+				padding: 8px;
+			}
+			
+			tr {
+				align : center;
+			}
+			
+			td {
+				align : center;
+			}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.bg {
+    /* The image used */
+    background-image: url("time.jpg");
+
+    /* Full height */
+    height: 100%; 
+ 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+legend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+}
+
+			
